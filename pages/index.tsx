@@ -7,6 +7,10 @@ import Title from '../components/home/title'
 import Project from '../components/home/project'
 
 export default function Home() {
+  const jacket = {
+    name: 'Ukiyo-e Style Jacket',
+    images: ['/images/jacket/1.jpg','/images/jacket/1.jpg']
+  }
   return (
     <>
       <Head>
@@ -17,7 +21,9 @@ export default function Home() {
       </Head>
       <Navbar />
       <Title />
-      <Project />
+      <Project project={jacket}/>
+      <Project project={jacket}/>
+      <Project project={jacket}/>
     </>
   )
 }

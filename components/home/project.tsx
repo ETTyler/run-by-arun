@@ -31,16 +31,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import "swiper/css/effect-coverflow";
+import styles from "./Project.module.css";
 import Image from 'next/image';
 import jacketPic from '../../../images/jacket/1.jpg';
+import { Key } from 'react';
 
-const Project = () => {
-
+//Ukiyo-e Style Jacket
+const Project = ({project}) => {
   return (
     <>
-    <Flex justifyContent={'center'}>
-      <Box maxW='4xl' borderWidth='1px' borderRadius='lg' p='5'>
+    <Flex justifyContent={'center'} p={3}>
+      <Box maxW='4xl' borderWidth='0px' borderRadius='lg' p='5'>
+        <Heading as='h1' size='xl' textAlign='center' pb={5}>{project.name}</Heading>
       <Swiper
+        navigation={true}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -53,27 +57,13 @@ const Project = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        navigation={true}
-        modules={[EffectCoverflow, Pagination]}
-        >
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={jacketPic} width={300} height={300} alt={''} />
-        </SwiperSlide>
+        modules={[EffectCoverflow, Pagination, Navigation]}
+      >
+        {project.images.map((image: string, index: Key) => (
+          <SwiperSlide key={index}>
+            <Image src={image} width={300} height={300} alt={''} className={styles.img}/>
+          </SwiperSlide>
+        ))}
         </Swiper>
       </Box>
     </Flex>

@@ -28,16 +28,16 @@ const Title = () => {
 
   return (
     <>
-    <Flex direction={'column'} px={2}>
-      <Stack spacing={3} align={'center'} >
-        <Divider borderWidth={2} borderColor={'black'}/>
-        <Text fontSize={{ base: '5xl', md: '6xl', lg: '8xl' }} letterSpacing={'tighter'}>
-          <b>RUN</b>BY<b>ARUN</b>
+    <Flex direction={'column'} px={4}>
+      <Stack spacing={3} align={'center'}>
+        <Divider borderWidth={2} borderColor={'white'}/>
+        <Text textStyle='h1' fontSize={{ base: '6xl', md: '8xl', lg: '25vh'}} >
+          <span style={{color: '#718096'}}>RUN</span><span style={{color:'#A0AEC0'}}>BY</span>ARUN
         </Text>
-        <Divider borderWidth={2} borderColor={'black'}/>
-        <Text as='b' fontSize={{base: 'md', md:'2xl'}}>
-          Based in Manchester. Available Worldwide.
+        <Text fontSize={{base: 'sm', md:'2xl'}} pb={2} >
+          BASED IN MANCHESTER. AVAILABLE WORLDWIDE.
         </Text>
+        <Divider borderWidth={2} borderColor={'white'}/>
       </Stack>
     </Flex>
     </>

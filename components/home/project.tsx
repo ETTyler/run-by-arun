@@ -31,9 +31,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import "swiper/css/effect-coverflow";
-import styles from "./Project.module.css";
 import Image from 'next/image';
-import jacketPic from '../../../images/jacket/1.jpg';
 import { Key } from 'react';
 
 //Ukiyo-e Style Jacket
@@ -41,31 +39,29 @@ const Project = ({project}) => {
   return (
     <>
     <Flex justifyContent={'center'} p={3}>
-      <Box maxW='4xl' borderWidth='0px' borderRadius='lg' p='5'>
-        <Heading as='h1' size='xl' textAlign='center' pb={5}>{project.name}</Heading>
-      <Swiper
-        navigation={true}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        loop={true}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-      >
-        {project.images.map((image: string, index: Key) => (
-          <SwiperSlide key={index}>
-            <Image src={image} width={300} height={300} alt={''} className={styles.img}/>
-          </SwiperSlide>
-        ))}
-        </Swiper>
+    <Stack spacing={3} align='center'>
+      <Box maxW='8xl' borderWidth='0px' borderRadius='lg' p='3' align='center'>
+        <Stack spacing={5}>
+          <Text as='b' fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}>{project.name} </Text>
+          <Swiper
+            navigation={true}
+            grabCursor={true}
+            spaceBetween={20}
+            centeredSlides={true}
+            slidesPerView={5}
+            loop={true}
+            modules={[Navigation]}
+          >
+            {project.images.map((image: string, index: Key) => (
+              <SwiperSlide key={index}>
+                <Image src={image} width={300} height={300} alt={''}/>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Stack>
       </Box>
+      <Button w={200} colorScheme='blue'  size='lg'>See More</Button>
+    </Stack>
     </Flex>
     </>
   )

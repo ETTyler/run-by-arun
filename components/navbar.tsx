@@ -54,6 +54,7 @@ const Navbar = () => {
           <IconButton 
             size={'lg'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            colorScheme={'black'}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}

@@ -9,6 +9,10 @@ import Project from '../components/home/project'
 export default function Home() {
   const jacket = {
     name: 'Ukiyo-e Style Jacket',
+    images: ['/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg', '/images/jacket/1.jpg','/images/jacket/1.jpg']
+  }
+  const jeans = {
+    name: 'Ukiyo-e Style Jeans',
     images: ['/images/jacket/1.jpg','/images/jacket/1.jpg']
   }
   return (
@@ -22,7 +26,7 @@ export default function Home() {
       <Navbar />
       <Title />
       <Project project={jacket}/>
-      <Project project={jacket}/>
+      <Project project={jeans}/>
       <Project project={jacket}/>
     </>
   )

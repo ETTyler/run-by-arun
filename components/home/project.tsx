@@ -42,17 +42,17 @@ interface Project {
 const Project = (props: {project: Project}) => {
   return (
     <>
-    <Flex justifyContent={'center'} p={3}>
+    <Flex justifyContent={'center'} p={2}>
     <Stack spacing={3} align='center'>
-      <Box maxW='80vw' borderWidth='0px' borderRadius='lg' p='3' align='center'>
+      <Box maxW='90vw' borderWidth='px' borderRadius='lg' p='3'>
         <Stack spacing={5}>
-          <Text as='b' fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}>{props.project.name} </Text>
+          <Text  align='center' fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}>{props.project.name} </Text>
           <Swiper
             navigation={true}
             grabCursor={true}
             spaceBetween={20}
             centeredSlides={true}
-            slidesPerView={5}
+            slidesPerView='auto'
             loop={true}
             breakpoints={{
               // when window width is >= 320px
@@ -95,9 +95,14 @@ const Project = (props: {project: Project}) => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <Stack spacing={5} justifyContent='center' align='center'>
+          <Text fontSize={{ base: 'xs', md: 'lg', lg: '2xl' }} textAlign='center'>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat sunt ex incidunt et quis pariatur consectetur ipsum, modi debitis nemo itaque culpa, doloremque praesentium est corrupti beatae facere exercitationem! Ab!
+          </Text>
+          <Button w={200} colorScheme='blue' size='lg'>See More</Button>
+          </Stack>
         </Stack>
       </Box>
-      <Button w={200} colorScheme='blue'  size='lg'>See More</Button>
     </Stack>
     </Flex>
     </>
